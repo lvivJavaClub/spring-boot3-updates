@@ -18,9 +18,13 @@
     <artifactId>spring-boot3-updates</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>LvivJavaClub - Demo of Spring Boot updates</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>clients</module>
+    </modules>
 
     <build>
-        <finalName>springBoot3Demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
