@@ -23,6 +23,7 @@
     <modules>
         <module>clients</module>
         <module>crac</module>
+        <module>ssl</module>
     </modules>
 
     <build>

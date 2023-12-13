@@ -50,4 +50,5 @@ psql -U postgres -d postgres -c "create database spring_boot_updates_db"
   ```shell
        java -XX:CRaCRestoreFrom=/opt/crac-files/
    ```
-3. Improvements for Security with SSL (**ssl-improvements**)
+* Improvements for Security with SSL (**ssl-improvements**)
+  * Release in v3.1.1 **spring bundle**
