@@ -1,4 +1,4 @@
-package ua.lviv.javavclub.clients.config;
+package ua.lviv.javaclub.clients.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

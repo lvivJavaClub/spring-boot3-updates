@@ -1,24 +1,28 @@
-package ua.lviv.javavclub.clients.repository;
+package ua.lviv.javaclub.clients.repository;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
-import ua.lviv.javavclub.clients.model.User;
-import ua.lviv.javavclub.clients.model.UserRequest;
+import ua.lviv.javaclub.clients.model.User;
+import ua.lviv.javaclub.clients.model.UserRequest;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @Repository
 public class UserRepository {
     private final JdbcClient jdbcClient;
+
+    public UserRepository(@Qualifier("usersJdbcClient") JdbcClient jdbcClient) {
+        this.jdbcClient = jdbcClient;
+    }
 
     private final RowMapper<User> usersRowMapper = (rs, rowNum) ->
             new User(rs.getLong("id"), rs.getString("username"), rs.getString("email"));
 
     private final RowMapper<Long> createUserMapper = (rs, rowNum) -> rs.getLong("id");
+
     public List<User> users() {
         return jdbcClient.sql("select * from users")
                 .query(this.usersRowMapper)
@@ -51,5 +55,17 @@ public class UserRepository {
         user.setEmail(userRequest.email());
         user.setUsername(userRequest.username());
         return Optional.of(user);
+    }
+
+    public Optional<Integer> removeUserById(Long id) {
+        var optionalUser = getById(id);
+        if (optionalUser.isEmpty()) {
+            return Optional.empty();
+        }
+
+        int updateCount = jdbcClient.sql("delete from users where id = ?")
+                .param(id)
+                .update();
+        return Optional.of(updateCount);
     }
 }

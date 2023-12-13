@@ -1,11 +1,11 @@
-package ua.lviv.javavclub.clients.controller;
+package ua.lviv.javaclub.clients.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ua.lviv.javavclub.clients.model.User;
-import ua.lviv.javavclub.clients.model.UserRequest;
-import ua.lviv.javavclub.clients.repository.UserRepository;
+import ua.lviv.javaclub.clients.model.User;
+import ua.lviv.javaclub.clients.model.UserRequest;
+import ua.lviv.javaclub.clients.repository.UserRepository;
 
 import java.util.List;
 import java.util.Map;
@@ -39,6 +39,13 @@ public class RestUserController {
     @PatchMapping
     public ResponseEntity<User> updateUser(@RequestParam Long id, @RequestBody UserRequest userRequest){
         var userOptional = userRepository.updateUserById(id, userRequest);
+        return userOptional.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Integer> updateUser(@PathVariable Long id){
+        var userOptional = userRepository.removeUserById(id);
         return userOptional.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

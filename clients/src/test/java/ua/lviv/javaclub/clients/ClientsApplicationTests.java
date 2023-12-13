@@ -1,4 +1,4 @@
-package ua.lviv.javavclub.clients;
+package ua.lviv.javaclub.clients;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

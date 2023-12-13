@@ -1,4 +1,4 @@
-package ua.lviv.javavclub.clients.model;
+package ua.lviv.javaclub.clients.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

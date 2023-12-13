@@ -1,11 +1,9 @@
-package ua.lviv.javavclub.clients.service;
+package ua.lviv.javaclub.clients.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
-import ua.lviv.javavclub.clients.model.ApplianceData;
-
-import java.util.List;
+import ua.lviv.javaclub.clients.model.ApplianceData;
 
 @Component
 @RequiredArgsConstructor

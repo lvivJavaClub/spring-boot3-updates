@@ -1,4 +1,4 @@
-package ua.lviv.javavclub.clients;
+package ua.lviv.javaclub.clients;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.devtools.restart.RestartScope;
