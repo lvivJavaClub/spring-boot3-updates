@@ -1,0 +1,5 @@
+#### Random data api
+GET https://random-data-api.com/api/v2/appliances
+
+#### Implemented get request via RestClient
+GET http://localhost:8080/api/random/appliance
