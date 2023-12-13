@@ -22,6 +22,7 @@
 
     <modules>
         <module>clients</module>
+        <module>crac</module>
     </modules>
 
     <build>
