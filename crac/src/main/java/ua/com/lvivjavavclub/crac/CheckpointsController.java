@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/checkpoint")
 public class CheckpointsController {
 
-    @GetMapping("checkpoint")
+    @GetMapping
     public String checkpoint(){
         return "Hello from CRaC application";
     }

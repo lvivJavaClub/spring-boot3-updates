@@ -1,7 +1,3 @@
-FROM openjdk:17-slim
-
-
-
 FROM ubuntu:22.04
 
 ENV JAVA_HOME /opt/jdk
