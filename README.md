@@ -52,3 +52,7 @@ psql -U postgres -d postgres -c "create database spring_boot_updates_db"
    ```
 * Improvements for Security with SSL (**ssl-improvements**)
   * Release in v3.1.1 **spring bundle**
+  * Create self-signed certs for demo
+  ```shell
+      openssl req -x509 -subj "/CN=javaclub-demo" -keyout javaclub.key -out javaclub.crt -sha256 -days 365 -nodes -newkey ed25519
+  ```

@@ -16,4 +16,9 @@ public class HelloController {
     public ResponseEntity<Map<String, String>> greetings(){
         return ResponseEntity.ok(Map.of("msg","Hello, dear community"));
     }
+
+    @GetMapping("/secured")
+    public ResponseEntity<Map<String, String>> greetings(Principal principal){
+        return ResponseEntity.ok(Map.of("msg","Hello, dear " + principal.getName()));
+    }
 }

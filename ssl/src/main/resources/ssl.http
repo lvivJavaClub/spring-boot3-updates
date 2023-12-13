@@ -1,0 +1,11 @@
+#### Hello endpoint
+#GET http://localhost:9090/api
+GET https://localhost:8443/api
+
+
+#### Hello endpoint (secured)
+@username =admin
+@password =admin
+@credentials=YWRtaW46YWRtaW4=
+GET http://localhost:8443/api/secured
+Authorization: Basic {{credentials}}
