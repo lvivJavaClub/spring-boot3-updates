@@ -20,8 +20,7 @@ postgres:14-alpine
 docker exec -it demo_postgres \
 psql -U postgres -d postgres -c "create database spring_boot_updates_db"
 ```
-
-2. Supports project Loom: Virtual threads (**loom-support**)
+2. Supports project Loom: Virtual threads for Spring Boot v3.2.0 (**loom-support**)
 3. Support CRaC: Coordinated Restore at Checkpoint (**crac-support**)
 4. Improvements for Security with SSL (**ssl-improvements**)
 5. Improvements for Observability (**observability-improvements**)
