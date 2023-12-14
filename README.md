@@ -1,6 +1,6 @@
 ## Agenda:
 
-> **_NOTE:_**  All demo sue Spring Boot 3.2.0 and Java 21
+> **_NOTE:_**  All demo sue Spring Boot 3.2.0 and Java 21 and 17(CRaC)
 * New Clients: JdbcClient && RestClient (**new-clients**)
 
   * Run postgres db:
@@ -56,3 +56,13 @@ psql -U postgres -d postgres -c "create database spring_boot_updates_db"
   ```shell
       openssl req -x509 -subj "/CN=javaclub-demo" -keyout javaclub.key -out javaclub.crt -sha256 -days 365 -nodes -newkey ed25519
   ```
+
+Resources:
+1. https://github.com/spring-projects/spring-boot/wiki/Supported-Versions
+2. https://spring.io/blog/2023/11/23/spring-boot-3-2-0-available-now
+3. https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.2-Release-Notes
+4. https://docs.spring.io/spring-framework/reference/integration/rest-clients.html
+5. https://spring.io/blog/2022/10/11/embracing-virtual-threads
+6. https://docs.spring.io/spring-framework/reference/integration/checkpoint-restore.html
+7. https://github.com/CRaC/docs
+8. https://wiki.openjdk.org/display/crac
